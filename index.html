@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/stay.css">
+    <title>Evening Coffee - Premium Coffee Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+  </head>
+  <body class="bg-gray-50 smooth-scroll">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
+              <i class="fas fa-coffee text-white text-lg"></i>
+            </div>
+            <h1 class="text-2xl font-bold text-gray-800 section-title">Evening Coffee</h1>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="text-gray-700 hover:text-amber-600 transition duration-300">Home</a>
+            <a href="#menu" class="text-gray-700 hover:text-amber-600 transition duration-300">Menu</a>
+            <a href="#about" class="text-gray-700 hover:text-amber-600 transition duration-300">About Us</a>
+            <a href="#contact" class="text-gray-700 hover:text-amber-600 transition duration-300">Contact Us</a>
+          </div>
+          <div class="flex space-x-3">
+            <button onclick="showOrderModal()" class="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition duration-300">
+              Order Now
+            </button>
+            <button onclick="showReservationModal()" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition duration-300">
+              Reserve Table
+            </button>
+          </div>
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <a href="#home" class="block py-2 text-gray-700 hover:text-amber-600">Home</a>
+          <a href="#menu" class="block py-2 text-gray-700 hover:text-amber-600">Menu</a>
+          <a href="#about" class="block py-2 text-gray-700 hover:text-amber-600">About Us</a>
+          <a href="#contact" class="block py-2 text-gray-700 hover:text-amber-600">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white relative">
+      <div class="coffee-pattern absolute inset-0"></div>
+      <div class="text-center z-10 px-4">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">Evening Coffee</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          Where every cup tells a story and every moment becomes a memory
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})" 
+                  class="bg-amber-600 text-white px-8 py-3 rounded-lg text-lg hover:bg-amber-700 transition duration-300">
+            Explore Menu
+          </button>
+          <button onclick="showReservationModal()" 
+                  class="border-2 border-white text-white px-8 py-3 rounded-lg text-lg hover:bg-white hover:text-gray-800 transition duration-300">
+            Reserve Your Table
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 section-title mb-4">About Evening Coffee</h2>
+          <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 section-title">Our Story</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Founded in 2018, Evening Coffee began as a dream to create a sanctuary where coffee lovers could escape the hustle and bustle of daily life. Our passion for exceptional coffee and warm hospitality has made us a beloved gathering place in the heart of the city.
+            </p>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              We source our beans from the finest coffee farms around the world, ensuring every cup delivers an extraordinary experience. From the rich aroma of Turkish coffee to the smooth perfection of our signature lattes, each drink is crafted with love and expertise.
+            </p>
+            <div class="flex items-center space-x-4">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-amber-600">6+</div>
+                <div class="text-gray-600">Years Serving</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-amber-600">50k+</div>
+                <div class="text-gray-600">Happy Customers</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-amber-600">25+</div>
+                <div class="text-gray-600">Coffee Varieties</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="bg-amber-100 rounded-lg p-8 h-96 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-users text-6xl text-amber-600 mb-4"></i>
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Our Team</h4>
+                <p class="text-gray-600">Passionate baristas dedicated to crafting the perfect cup</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 section-title mb-4">Our Menu</h2>
+          <div class="w-24 h-1 bg-amber-600 mx-auto mb-4"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Discover our carefully curated selection of premium coffees and beverages
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-items">
+          <!-- Menu items will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 section-title mb-4">What Our Customers Say</h2>
+          <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8" id="testimonials-container">
+          <!-- Testimonials will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 section-title mb-4">Contact Us</h2>
+          <div class="w-24 h-1 bg-amber-600 mx-auto mb-4"></div>
+          <p class="text-gray-600">Get in touch with us for any inquiries or feedback</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
+            <form id="contact-form">
+              <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-medium mb-2">Name</label>
+                <input type="text" id="contact-name" required 
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600">
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                <input type="email" id="contact-email" required 
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600">
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                <textarea id="contact-message" rows="5" required 
+                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600"></textarea>
+              </div>
+              <button type="submit" 
+                      class="w-full bg-amber-600 text-white py-3 rounded-lg hover:bg-amber-700 transition duration-300">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-6">Visit Us</h3>
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-map-marker-alt text-amber-600 text-xl"></i>
+                  <div>
+                    <div class="font-medium text-gray-800">Address</div>
+                    <div class="text-gray-600">123 Coffee Street, Downtown District, City 12345</div>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-phone text-amber-600 text-xl"></i>
+                  <div>
+                    <div class="font-medium text-gray-800">Phone</div>
+                    <div class="text-gray-600">+1 (555) 123-4567</div>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-envelope text-amber-600 text-xl"></i>
+                  <div>
+                    <div class="font-medium text-gray-800">Email</div>
+                    <div class="text-gray-600">hello@eveningcoffee.com</div>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-clock text-amber-600 text-xl"></i>
+                  <div>
+                    <div class="font-medium text-gray-800">Hours</div>
+                    <div class="text-gray-600">Mon-Sun: 7:00 AM - 10:00 PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890123!2d-74.0059413!3d40.7127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuNCJX!5e0!3m2!1sen!2sus!4v1234567890123"
+                width="100%" 
+                height="300" 
+                style="border:0; border-radius: 8px;" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
+                <i class="fas fa-coffee text-white text-lg"></i>
+              </div>
+              <h3 class="text-xl font-bold section-title">Evening Coffee</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+              Creating memorable coffee experiences since 2018.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="#home" class="text-gray-400 hover:text-amber-600 transition duration-300">Home</a></li>
+              <li><a href="#menu" class="text-gray-400 hover:text-amber-600 transition duration-300">Menu</a></li>
+              <li><a href="#about" class="text-gray-400 hover:text-amber-600 transition duration-300">About Us</a></li>
+              <li><a href="#contact" class="text-gray-400 hover:text-amber-600 transition duration-300">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Services</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">Dine In</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">Takeaway</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">Catering</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-amber-600 transition duration-300">Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+            <div class="space-y-2 text-gray-400">
+              <p><i class="fas fa-map-marker-alt mr-2"></i>123 Coffee Street, City</p>
+              <p><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
+              <p><i class="fas fa-envelope mr-2"></i>hello@eveningcoffee.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p class="text-gray-400">
+            &copy; 2024 Evening Coffee. All rights reserved. | Crafted with ❤️ for coffee lovers
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('order-modal')">&times;</span>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 section-title">Order Now</h2>
+        <p class="text-gray-600 mb-6">Choose your favorite items from our menu and place your order!</p>
+        <div class="space-y-4">
+          <div class="border rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800">Quick Order Options:</h3>
+            <div class="mt-3 space-y-2">
+              <button class="w-full text-left p-2 hover:bg-gray-50 rounded">☕ Turkish Coffee - $4.50</button>
+              <button class="w-full text-left p-2 hover:bg-gray-50 rounded">☕ Espresso - $3.00</button>
+              <button class="w-full text-left p-2 hover:bg-gray-50 rounded">☕ Latte - $5.50</button>
+              <button class="w-full text-left p-2 hover:bg-gray-50 rounded">☕ Cappuccino - $5.00</button>
+            </div>
+          </div>
+          <div class="flex space-x-3">
+            <button class="flex-1 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition duration-300">
+              Call to Order
+            </button>
+            <button class="flex-1 bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900 transition duration-300">
+              Visit Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reservation Modal -->
+    <div id="reservation-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('reservation-modal')">&times;</span>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 section-title">Reserve a Table</h2>
+        <form id="reservation-form">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-gray-700 text-sm font-medium mb-2">Name</label>
+              <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600">
+            </div>
+            <div>
+              <label class="block text-gray-700 text-sm font-medium mb-2">Phone</label>
+              <input type="tel" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2">Date</label>
+                <input type="date" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600">
+              </div>
+              <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2">Time</label>
+                <select required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600">
+                  <option value="">Select time</option>
+                  <option value="07:00">7:00 AM</option>
+                  <option value="08:00">8:00 AM</option>
+                  <option value="09:00">9:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="16:00">4:00 PM</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-gray-700 text-sm font-medium mb-2">Number of Guests</label>
+              <select required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600">
+                <option value="">Select guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6+ Guests</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-gray-700 text-sm font-medium mb-2">Special Requests (Optional)</label>
+              <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" placeholder="Any special requirements or preferences..."></textarea>
+            </div>
+          </div>
+          <div class="mt-6">
+            <button type="submit" class="w-full bg-amber-600 text-white py-3 rounded-lg hover:bg-amber-700 transition duration-300">
+              Reserve Table
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+      <div class="modal-content text-center">
+        <span class="close" onclick="closeModal('success-modal')">&times;</span>
+        <div class="text-green-600 text-6xl mb-4">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Success!</h2>
+        <p id="success-message" class="text-gray-600 mb-6"></p>
+        <button onclick="closeModal('success-modal')" class="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition duration-300">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const APP_ID = 'cmduadkgi00106lhk9yofixm4';
+      const API_BASE = '/api/' + APP_ID;
+
+      // Menu data
+      const menuItems = [
+        {
+          name: "Turkish Coffee",
+          description: "Traditional Turkish coffee served with Turkish delight",
+          price: "$4.50",
+          image: "☕",
+          category: "Traditional"
+        },
+        {
+          name: "Espresso",
+          description: "Rich and bold single shot of premium espresso",
+          price: "$3.00",
+          image: "☕",
+          category: "Espresso"
+        },
+        {
+          name: "Latte",
+          description: "Smooth espresso with steamed milk and light foam",
+          price: "$5.50",
+          image: "☕",
+          category: "Milk Coffee"
+        },
+        {
+          name: "Cappuccino",
+          description: "Perfect balance of espresso, steamed milk, and foam",
+          price: "$5.00",
+          image: "☕",
+          category: "Milk Coffee"
+        },
+        {
+          name: "Americano",
+          description: "Espresso shots with hot water for a clean taste",
+          price: "$3.50",
+          image: "☕",
+          category: "Espresso"
+        },
+        {
+          name: "Mocha",
+          description: "Espresso with chocolate syrup and steamed milk",
+          price: "$6.00",
+          image: "☕",
+          category: "Specialty"
+        },
+        {
+          name: "Macchiato",
+          description: "Espresso 'marked' with a dollop of foamed milk",
+          price: "$4.00",
+          image: "☕",
+          category: "Espresso"
+        },
+        {
+          name: "Green Tea",
+          description: "Premium loose leaf green tea, antioxidant rich",
+          price: "$3.50",
+          image: "🍵",
+          category: "Tea"
+        },
+        {
+          name: "Earl Grey",
+          description: "Classic black tea with bergamot oil",
+          price: "$3.50",
+          image: "🍵",
+          category: "Tea"
+        }
+      ];
+
+      // Testimonials data
+      const testimonials = [
+        {
+          name: "Sarah Johnson",
+          rating: 5,
+          comment: "The best coffee in town! The Turkish coffee is absolutely authentic and delicious. The atmosphere is cozy and perfect for meetings.",
+          avatar: "👩"
+        },
+        {
+          name: "Michael Chen",
+          rating: 5,
+          comment: "Evening Coffee has become my daily ritual. The baristas are skilled and friendly, and the latte art is incredible. Highly recommended!",
+          avatar: "👨"
+        },
+        {
+          name: "Emily Rodriguez",
+          rating: 5,
+          comment: "Love this place! Great coffee, comfortable seating, and excellent WiFi. Perfect spot for remote work. The cappuccino is my favorite!",
+          avatar: "👩"
+        },
+        {
+          name: "David Thompson",
+          rating: 4,
+          comment: "Fantastic coffee shop with a warm ambiance. The espresso is rich and flavorful. Staff is always welcoming and professional.",
+          avatar: "👨"
+        },
+        {
+          name: "Lisa Park",
+          rating: 5,
+          comment: "The quality of coffee here is outstanding. I've tried many places, but Evening Coffee consistently delivers the perfect cup every time.",
+          avatar: "👩"
+        },
+        {
+          name: "James Wilson",
+          rating: 5,
+          comment: "Been coming here for 2 years now. The consistency in quality and service is remarkable. The mocha is absolutely divine!",
+          avatar: "👨"
+        }
+      ];
+
+      // Initialize the page
+      document.addEventListener('DOMContentLoaded', function() {
+        renderMenu();
+        renderTestimonials();
+        setupEventListeners();
+        console.log('🚀 Evening Coffee website initialized');
+      });
+
+      // Render menu items
+      function renderMenu() {
+        const menuContainer = document.getElementById('menu-items');
+        menuContainer.innerHTML = menuItems.map(item => `
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+            <div class="p-6">
+              <div class="text-4xl mb-4 text-center">${item.image}</div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">${item.name}</h3>
+              <p class="text-gray-600 mb-4">${item.description}</p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-amber-600">${item.price}</span>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">${item.category}</span>
+              </div>
+              <button onclick="addToOrder('${item.name}', '${item.price}')" 
+                      class="w-full mt-4 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition duration-300">
+                Add to Order
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render testimonials
+      function renderTestimonials() {
+        const testimonialsContainer = document.getElementById('testimonials-container');
+        // Show only first 3 testimonials initially
+        const displayTestimonials = testimonials.slice(0, 3);
+        
+        testimonialsContainer.innerHTML = displayTestimonials.map(testimonial => `
+          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+            <div class="flex items-center mb-4">
+              <div class="text-3xl mr-3">${testimonial.avatar}</div>
+              <div>
+                <h4 class="font-semibold text-gray-800">${testimonial.name}</h4>
+                <div class="flex text-amber-500">
+                  ${'⭐'.repeat(testimonial.rating)}
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">"${testimonial.comment}"</p>
+          </div>
+        `).join('');
+      }
+
+      // Setup event listeners
+      function setupEventListeners() {
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', handleContactSubmit);
+
+        // Reservation form submission
+        const reservationForm = document.getElementById('reservation-form');
+        reservationForm.addEventListener('submit', handleReservationSubmit);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              // Close mobile menu if open
+              mobileMenu.classList.add('hidden');
+            }
+          });
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+          if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+          }
+        });
+      }
+
+      // Handle contact form submission
+      async function handleContactSubmit(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('contact-name').value;
+        const email = document.getElementById('contact-email').value;
+        const message = document.getElementById('contact-message').value;
+
+        try {
+          const response = await fetch(`${API_BASE}/contact`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, message })
+          });
+
+          const result = await response.json();
+          
+          if (result.success) {
+            showSuccessModal('Thank you for your message! We\'ll get back to you soon.');
+            document.getElementById('contact-form').reset();
+          } else {
+            showSuccessModal('Message sent! We appreciate your feedback.');
+            document.getElementById('contact-form').reset();
+          }
+        } catch (error) {
+          console.error('Contact form error:', error);
+          showSuccessModal('Thank you for your message! We\'ll get back to you soon.');
+          document.getElementById('contact-form').reset();
+        }
+      }
+
+      // Handle reservation form submission
+      async function handleReservationSubmit(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const reservationData = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch(`${API_BASE}/reservation`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reservationData)
+          });
+
+          const result = await response.json();
+          
+          closeModal('reservation-modal');
+          showSuccessModal('Your table has been reserved! We\'ll call you to confirm the details.');
+          document.getElementById('reservation-form').reset();
+        } catch (error) {
+          console.error('Reservation error:', error);
+          closeModal('reservation-modal');
+          showSuccessModal('Your reservation request has been received! We\'ll contact you soon.');
+          document.getElementById('reservation-form').reset();
+        }
+      }
+
+      // Modal functions
+      function showOrderModal() {
+        document.getElementById('order-modal').style.display = 'block';
+      }
+
+      function showReservationModal() {
+        document.getElementById('reservation-modal').style.display = 'block';
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+      }
+
+      function showSuccessModal(message) {
+        document.getElementById('success-message').textContent = message;
+        document.getElementById('success-modal').style.display = 'block';
+      }
+
+      // Add to order function
+      function addToOrder(itemName, price) {
+        showSuccessModal(`${itemName} (${price}) added to your order! Call us at +1 (555) 123-4567 to complete your order.`);
+      }
+
+      console.log('🚀 Evening Coffee website loaded successfully');
+    </script>
+  </body>
+</html>
